@@ -6,13 +6,19 @@ package graph
 
 import (
 	"context"
-	"fmt"
 	"my_gql_server/graph/model"
 )
 
 // CreateTodo is the resolver for the createTodo field.
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented: CreateTodo"))
+	return &model.Todo{
+		ID:   "TODO-3",
+		Text: input.Text,
+		User: &model.User{
+			ID:   input.UserID,
+			Name: "name",
+		},
+	}, nil
 }
 
 // Todos is the resolver for the todos field.
