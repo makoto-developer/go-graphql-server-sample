@@ -12,8 +12,8 @@ import (
 // CreateTodo is the resolver for the createTodo field.
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
 	return &model.Todo{
-		ID:   "TODO-3",
-		Text: input.Text,
+		ID:    "TODO-3",
+		Title: input.Title,
 		User: &model.User{
 			ID:   input.UserID,
 			Name: "name",
@@ -25,9 +25,9 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	return []*model.Todo{
 		{
-			ID:   "1-1",
-			Text: "椎茸を買いに行く",
-			Done: false,
+			ID:    "1-1",
+			Title: "椎茸を買いに行く",
+			Done:  false,
 			User: &model.User{
 				ID:   "1",
 				Name: "アリス",

@@ -3,11 +3,20 @@
 ## Starting
 
 ```shell
-> go run ./server.go                                                                                                                                                                                                                                                                              2023-10-10 23:27
+> go run ./server.g
 2023/10/10 23:27:08 connect to http://localhost:8080/ for GraphQL playground
 ```
 
 ブラウザで↑のエンドポイントにアクセス
+
+
+Portを変えて実行する場合は、
+
+```shell
+> PORT=10000 go run ./server.go
+2023/10/10 23:27:08 connect to http://localhost:10000/ for GraphQL playground
+```
+
 
 ## Query samples
 
@@ -17,7 +26,7 @@ get todos
 query {
   todos {
     id
-    text
+    title
     done
     user {
       name
@@ -31,11 +40,11 @@ mutation
 ```shelll
 mutation {
   createTodo(input: {
-    text: "test-create-todo"
+    title: "test-create-todo"
     userId: "test-user-id"
   }){
     id
-    text
+    title
     done
     user {
       id
@@ -45,6 +54,12 @@ mutation {
 }
 ```
 
+
+## schema.graphqlからモデルなど自動生成
+
+```shell
+gqlgen generate
+```
+
 ## Reference
 - https://gqlgen.com/getting-started/
-
