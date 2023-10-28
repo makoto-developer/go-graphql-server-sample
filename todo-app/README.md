@@ -1,5 +1,12 @@
 # GraphQL-Server Sample
 
+## Feature
+
+|status|featuer|
+|:---:|:---|
+|🔲|データベースに接続する|
+|🔲||
+
 ## Starting
 
 ```shell
